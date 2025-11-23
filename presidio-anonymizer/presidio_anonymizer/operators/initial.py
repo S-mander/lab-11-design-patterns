@@ -18,7 +18,16 @@ class Initial(Operator):
 		if not tokens:
 			return ""
 
-		initials = [f"{t[0].upper()}." for t in tokens]
+		def token_initial(tok: str) -> str:
+			# find first alphanumeric character and preserve anything before it
+			for idx, ch in enumerate(tok):
+				if ch.isalnum():
+					pref = tok[:idx]
+					ch_out = ch.upper() if ch.isalpha() else ch
+					return f"{pref}{ch_out}."
+			return tok
+
+		initials = [token_initial(t) for t in tokens]
 		return " ".join(initials)
 
 	def validate(self, params: Dict = None) -> None:
