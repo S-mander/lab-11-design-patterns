@@ -14,16 +14,20 @@ to the main method in sample.py (line 29),
 to the run_anonymizer method in the sample.py (line 13)
 to the anonymize method in AnonymizerEngine Class (line 104)
 [complete the call stack here]
+call stack could not be found, I ran into too many issues
 ```
 
 * How many if/elif branches are used in selecting the operator?
-*Put your answer here*
+No if/elif branches are used in selecting an operator
 
 * What data structure (a Python data type) exactly is used to select the operator?
-*Put your answer here*
+A Python dict is used
 
 * Explain how "Strategy" design pattern is reflected here.
-
+-defines a family of interchangeable behaviors through encapsulation
+-each operator class implements the same Operator interface
+-the factory selects and returns a strategy instance at runtime based
+on the operator name
 
 ---
 
